@@ -68,7 +68,7 @@
 
 4，选中，然后点击继续，这个是为了只让我们保留选中的个案。被过滤的个案前面会打斜线，后面的分析这些数据将不会参与。
 
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/微信图片_20221025202639.jpg" alt="微信图片_20221025202639" style="zoom:80%;" />
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/微信图片_20221025202639.jpg" alt="微信图片_20221025202639" style="zoom:50%;" />
 
 ---
 
