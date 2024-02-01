@@ -650,6 +650,322 @@
 
 ---
 
+## 第9章 一元方差分析
+
+> **任务：**研究名义变量或顺序变量与尺度变量之间的关系。
+>
+> 尺度变量：因变量；
+>
+> 名义变量或顺序变量：自变量。
+>
+> **目的：**想知道当自变量去不同水平时因变量是否有显著差异。
+
+方法：
+
+- 简单方差分析（F检验）
+- 平均数多重比较的方差分析（T检验）
+
+---
+
+#### 简单方差分析（一元方差分析）
+
+> 方法，F检验：通过比较组内差异和组间差异的大小来确定变量之间是否相关。若组内差异大而组间差异小，则说明两个变量不相关；若组内差异小而组间差异大，则说明两个变量相关。
+
+前提条件：因变量在影响因素的各个水平服从正态分布且具有等方差性。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221113205349101.png" alt="image-20221113205349101" style="zoom: 33%;" />
+
+> 差异的比值是F，它是服从F分布的一个统计量。
+>
+> 若组间差异大组内差异小，说明比值的分子大分母小，则F值大，此时两个变量相关；
+>
+> 若组间差异小组内差异大，说明比值的分母大分子小，则F值小，是一个正常的值，此时两个变量无关
+
+原假设：各组均值是相等的，F值是正常值，偏小
+
+**分析 -> 比较均值 -> 单因素方差分析**
+
+---
+
+案例1：休闲调查1
+
+要求：以“文化程度”为影响因素，对“家月收入”进行方差分析。
+
+步骤：
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120215143158.png" alt="image-20221120215143158" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220628735.png" alt="image-20221120220628735" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220644051.png" alt="image-20221120220644051" style="zoom:50%;" />
+
+点击确定。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220823526.png" alt="image-20221120220823526" style="zoom:80%;" />
+
+> 关注均值的一列，文化程度越高，家庭月收入越大，初步判断两个变量相关。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220854584.png" alt="image-20221120220854584" style="zoom:80%;" />
+
+> 原假设是各组方差没有显著差异，这里的显著性（P值）大于0.05，说明不拒绝原假设，说明各组家庭月收入的方差具有齐性
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220909486.png" alt="image-20221120220909486" style="zoom:80%;" />
+
+> F值检验的表，用组间差异除自由度得到平均的组间差异，同理，用组内差异....的平均的组内差异，最后两者相除得到F值，可以看到F值是较大的一个异常值，并且显著性小于0,05，故拒绝原假设（因为概率很小），认为不同文化程度的家庭月收入有显著的差异。
+
+---
+
+案例2：休闲调查
+
+要求：以“文化程度”为影响因素，对“家月收入”进行方差分析（**方差齐性不满足时**用Brown-forsythe和welch检验，近似F检验）。
+
+步骤：
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222152694.png" alt="image-20221120222152694" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222231304.png" alt="image-20221120222231304" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222252559.png" alt="image-20221120222252559" style="zoom:50%;" />
+
+点击确定。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222451232.png" alt="image-20221120222451232" style="zoom:80%;" />
+
+> 可以看出文化程度越高，家庭月收入的平均值越大，初步说明两者有关系
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222512218.png" alt="image-20221120222512218" style="zoom:80%;" />
+
+> 拒绝原假设，说明各组的方差不等。各组的家庭月收入不具有方差齐性。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222529778.png" alt="image-20221120222529778" style="zoom:80%;" />
+
+> 因为方差不具有齐性，故不能用此表判断。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222554970.png" alt="image-20221120222554970" style="zoom:80%;" />
+
+> 都是0.000，拒绝原假设，说明各组的家庭月收入的均值不等，有显著差异。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120223349461.png" alt="image-20221120223349461" style="zoom:80%;" />
+
+> 可以看到随着文化程度的增高，月收入的平均值是随之增高的。
+
+---
+
+#### 平均数多重比较的方差分析
+
+- **分析 -> 比较均值 -> 单因素方差分析**
+- **“两两比较”——”LSD“**（能达到显著性水平的最小差异），用T检验的方法完成各组均值的比较。
+
+案例：休闲调查1
+
+要求：以“休闲调查1”中以“文化程度”为影响因素，对“家月收入”进行多重比较的方差分析。
+
+步骤：
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121234858361.png" alt="image-20221121234858361" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235554150.png" alt="image-20221121235554150" style="zoom:50%;" />
+
+> 此处的事后比较就是两两比较
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235615014.png" alt="image-20221121235615014" style="zoom:50%;" />
+
+点击继续，回到“单因素 ANOVA 检验”窗，点击选项。<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235732105.png" alt="image-20221121235732105" style="zoom:50%;" />
+
+点击继续，点击确定。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235813001.png" alt="image-20221121235813001" style="zoom:80%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235827805.png" alt="image-20221121235827805" style="zoom:80%;" />
+
+> 0.692，大于0.05，认为不拒绝方差假设。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235845772.png" alt="image-20221121235845772" style="zoom:80%;" />
+
+> F检验的结果，根据F值和P值，应该拒绝原假设。认为各组均值有显著差异。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235924043.png" alt="image-20221121235924043" style="zoom:80%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122000004163.png" alt="image-20221122000004163" style="zoom:80%;" />
+
+> 在显著性里找小于0.05的数字，例如“大专”和“大学本科及以上”，就说明“没读过书”和这两组的家庭月收入是有显著差异的。可以看到这两组的平均值差值在右上角有*号，这个符号就说明对应的这两组人与对比组有显著差异。
+>
+> 小学没有。
+>
+> “初中”与“大专”和“大学本科及以上”的两组人的家庭月收入的均值有显著差异。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122000029056.png" alt="image-20221122000029056" style="zoom:80%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122000042931.png" alt="image-20221122000042931" style="zoom:80%;" />
+
+> “高中”与“大专”和“大学本科及以上”的两组人的家庭月收入的均值有显著差异。
+>
+> ”大专“与“初中”和“高中”的两组人的家庭月收入的均值有显著差异。
+>
+> “大学本科及以上”与“初中”和“高中”的两组人的家庭月收入的均值有显著差异。
+
+---
+
+#### 二因素的方差分析
+
+> 目的：分析两个因素（自变量）对观测变量（因变量）的影响。
+
+**分析 -> 一般线性模型 -> 单变量**
+
+案例：休闲调查.sav
+
+要求：以“文化程度、就业情况”为影响因素，对“月收入”进行多重比较的方差分析（包含交互效应）。
+
+步骤：
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122002626039.png" alt="image-20221122002626039" style="zoom: 67%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122002755862.png" alt="image-20221122002755862" style="zoom: 67%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122002810252.png" alt="image-20221122002810252" style="zoom: 67%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003113338.png" alt="image-20221122003113338" style="zoom:67%;" />
+
+> 全因子，包含3个自变量，文化程度，就业情况，以及它们两者的交互效应。
+>
+> 定制的话可以自己选择因子，类型可选交互、主效应，所有二阶的意思是：除了文化程度和就业情况，还包括这两个因素的平方。
+>
+> 我们此题选择全因子模型。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003438285.png" alt="image-20221122003438285" style="zoom:67%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003459150.png" alt="image-20221122003459150" style="zoom:67%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003822227.png" alt="image-20221122003822227" style="zoom:67%;" />
+
+点击继续，点击确定。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003854542.png" alt="image-20221122003854542" style="zoom:80%;" />
+
+> 首先按文化程度分类，每一个类人的个案数，可以看到初中的人最多，没读过书的这一类人最少。
+>
+> 若按就业情况分类，可以看到在职在岗的人最多，内退的人最少
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003959173.png" alt="image-20221122003959173" style="zoom:80%;" />
+
+> 没读过书且离退休的月收入均值是665元
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004141054.png" alt="image-20221122004141054" style="zoom:80%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004208545.png" alt="image-20221122004208545" style="zoom:80%;" />
+
+> 总体看下来，发现文化程度是大学本科及以上，就业情况是再就业，这类人群的月收入均值是最高的，2400元。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010018272.png" alt="image-20221122010018272" style="zoom:80%;" />
+
+> 重要的表之一，根据要求自变量是 文化程度、就业情况 和 文化程度与就业情况的交互效应。
+>
+> 可以看到这三个自变量结合F值和显著性的值构成的表。看出 文化程度 的显著性是0.042，小于0.05，说明它对月收入的影响是显著的，而其他量因素的影响是不显著的。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010034804.png" alt="image-20221122010034804" style="zoom:80%;" />
+
+![image-20221122010056396](https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010056396.png)
+
+> 总的均值是1039.907。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004223344.png" alt="image-20221122004223344" style="zoom:80%;" />
+
+> 随文化程度的增到，月收入均值呈上升趋势。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004236993.png" alt="image-20221122004236993" style="zoom:80%;" />
+
+> 可以看到再就业的人月收入均值是最高的，最低的是病伤休。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004300586.png" alt="image-20221122004300586" style="zoom:80%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004334141.png" alt="image-20221122004334141" style="zoom:80%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004408517.png" alt="image-20221122004408517" style="zoom:80%;" />
+
+> 和描述性统计的图类似。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010850627.png" alt="image-20221122010850627" style="zoom:80%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010900158.png" alt="image-20221122010900158" style="zoom:80%;" />
+
+> 文化程度是等级类型的自变量，可以看到，随着文化等级的升高，月收入的平均值是呈现升高的变化趋势。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010912378.png" alt="image-20221122010912378" style="zoom:80%;" />
+
+> 可以直观的看到再就业这一类人的月收入均值最高。
+
+---
+
+#### 协方差分析
+
+> **目的：**在因素中包含连续型变量（协变量），对观测变量（因变量）进行更准确的分析。
+
+事实上，自变量有时候会包括想年龄这样的连续性变量，如果做方差分析的时候没有考虑连续性变量，那么这种方差分析是不够准确的，所以我们需要把这种连续性变量包括进来做方差分析，这就是协方差分析。
+
+**分析 -> 一般线性模型 -> 单变量**
+
+案例：休闲调查1.sav
+
+要求：以“文化程度、就业情况”为影响因素，以“年龄”为协变量，对“月收入”进行方差分析（增加参数估计）
+
+> 年龄使连续变量
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207125647142.png" alt="image-20221207125647142" style="zoom:50%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207125647142.png" alt="image-20221207125647142" style="zoom:50%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207125852366.png" alt="image-20221207125852366" style="zoom:50%;" />
+
+结果：
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207125941597.png" alt="image-20221207125941597" style="zoom: 67%;" />
+
+可以看到在文化程度的分类上，初中这一类人最多，就业情况在职在岗使最多的。
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130050103.png" alt="image-20221207130050103" style="zoom:67%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130111987.png" alt="image-20221207130111987" style="zoom: 67%;" />![image-20221207130128447](https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130128447.png)
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130111987.png" alt="image-20221207130111987" style="zoom: 67%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130128447.png" alt="image-20221207130128447" style="zoom:67%;" />
+
+> 可以看到总体时随着……升高而升高
+
+![image-20221207130942401](https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130942401.png)
+
+> 只有文化程度和月收入的影响是显著的
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207131804996.png" alt="image-20221207131804996" style="zoom:67%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207131837632.png" alt="image-20221207131837632" style="zoom:67%;" />
+
+> 看B值，先找一个类比值，文化程度是7，就业情况是11的时候B值都为0，我们吧这两种情况作为一个标准情况，也就是说这两种情况的人的月收入是最高的，也就是1649.259.作为一个标准，在此标准上，如果其他情况不变。把文化程度换成1，那个月收入就会减少883。
+>
+> 年龄的B值为-4.146，就是说年龄增加一岁就会减少4.146.
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207132803362.png" alt="image-20221207132803362" style="zoom:67%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207132824991.png" alt="image-20221207132824991" style="zoom:67%;" />
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207132842738.png" alt="image-20221207132842738" style="zoom:67%;" />
+
+---
+
+### 第10章 相关与回归分析
+
+名义类型，尺度类型
+
+如何进行尺度类型和尺度类型的变量比较
+
+**分析->相关**
+
+皮尔孙
+
+先做散点图，看两个变量之间是否有线性相关分析
+
+休闲调查1
+
+“住房面积”和“家月收入”作相关分析
+
+住房面积为x轴，家月收入为y轴
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207133333958.png" alt="image-20221207133333958" style="zoom:50%;" />
+
+选择简单散点
+
+<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207133444570.png" alt="image-20221207133444570" style="zoom:50%;" />
+
+![image-20221207133517238](https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207133517238.png)
+
+正相关
+
+---
+
 ## 第11章 非参数检验
 
 **参数检验**是通过对样本的参数计算去推断总体的参数，比如均值、方差，在做参数检验时，我们通常对分布以及方差具有一些**假定**，比如假定分布式正态分布或者方差具有齐性，但是在很多情况下条件是不满足或者未知的，name这个时候参数检验就显得很不方便收到了限制，这时我们做**非参数检验**就很方便。
@@ -1048,317 +1364,3 @@ H1：至少有一个x值使 Fn(x)≠F0(x) 成立
 > 结论与上一个检验方法差不多。
 
 ---
-
-## 第9章 一元方差分析
-
-> **任务：**研究名义变量或顺序变量与尺度变量之间的关系。
->
-> 尺度变量：因变量；
->
-> 名义变量或顺序变量：自变量。
->
-> **目的：**想知道当自变量去不同水平时因变量是否有显著差异。
-
-方法：
-
-- 简单方差分析（F检验）
-- 平均数多重比较的方差分析（T检验）
-
----
-
-#### 简单方差分析（一元方差分析）
-
-> 方法，F检验：通过比较组内差异和组间差异的大小来确定变量之间是否相关。若组内差异大而组间差异小，则说明两个变量不相关；若组内差异小而组间差异大，则说明两个变量相关。
-
-前提条件：因变量在影响因素的各个水平服从正态分布且具有等方差性。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221113205349101.png" alt="image-20221113205349101" style="zoom: 33%;" />
-
-> 差异的比值是F，它是服从F分布的一个统计量。
->
-> 若组间差异大组内差异小，说明比值的分子大分母小，则F值大，此时两个变量相关；
->
-> 若组间差异小组内差异大，说明比值的分母大分子小，则F值小，是一个正常的值，此时两个变量无关
-
-原假设：各组均值是相等的，F值是正常值，偏小
-
-**分析 -> 比较均值 -> 单因素方差分析**
-
----
-
-案例1：休闲调查1
-
-要求：以“文化程度”为影响因素，对“家月收入”进行方差分析。
-
-步骤：
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120215143158.png" alt="image-20221120215143158" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220628735.png" alt="image-20221120220628735" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220644051.png" alt="image-20221120220644051" style="zoom:50%;" />
-
-点击确定。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220823526.png" alt="image-20221120220823526" style="zoom:80%;" />
-
-> 关注均值的一列，文化程度越高，家庭月收入越大，初步判断两个变量相关。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220854584.png" alt="image-20221120220854584" style="zoom:80%;" />
-
-> 原假设是各组方差没有显著差异，这里的显著性（P值）大于0.05，说明不拒绝原假设，说明各组家庭月收入的方差具有齐性
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120220909486.png" alt="image-20221120220909486" style="zoom:80%;" />
-
-> F值检验的表，用组间差异除自由度得到平均的组间差异，同理，用组内差异....的平均的组内差异，最后两者相除得到F值，可以看到F值是较大的一个异常值，并且显著性小于0,05，故拒绝原假设（因为概率很小），认为不同文化程度的家庭月收入有显著的差异。
-
----
-
-案例2：休闲调查
-
-要求：以“文化程度”为影响因素，对“家月收入”进行方差分析（**方差齐性不满足时**用Brown-forsythe和welch检验，近似F检验）。
-
-步骤：
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222152694.png" alt="image-20221120222152694" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222231304.png" alt="image-20221120222231304" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222252559.png" alt="image-20221120222252559" style="zoom:50%;" />
-
-点击确定。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222451232.png" alt="image-20221120222451232" style="zoom:80%;" />
-
-> 可以看出文化程度越高，家庭月收入的平均值越大，初步说明两者有关系
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222512218.png" alt="image-20221120222512218" style="zoom:80%;" />
-
-> 拒绝原假设，说明各组的方差不等。各组的家庭月收入不具有方差齐性。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222529778.png" alt="image-20221120222529778" style="zoom:80%;" />
-
-> 因为方差不具有齐性，故不能用此表判断。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120222554970.png" alt="image-20221120222554970" style="zoom:80%;" />
-
-> 都是0.000，拒绝原假设，说明各组的家庭月收入的均值不等，有显著差异。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221120223349461.png" alt="image-20221120223349461" style="zoom:80%;" />
-
-> 可以看到随着文化程度的增高，月收入的平均值是随之增高的。
-
----
-
-#### 平均数多重比较的方差分析
-
-- **分析 -> 比较均值 -> 单因素方差分析**
-- **“两两比较”——”LSD“**（能达到显著性水平的最小差异），用T检验的方法完成各组均值的比较。
-
-案例：休闲调查1
-
-要求：以“休闲调查1”中以“文化程度”为影响因素，对“家月收入”进行多重比较的方差分析。
-
-步骤：
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121234858361.png" alt="image-20221121234858361" style="zoom:50%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235554150.png" alt="image-20221121235554150" style="zoom:50%;" />
-
-> 此处的事后比较就是两两比较
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235615014.png" alt="image-20221121235615014" style="zoom:50%;" />
-
-点击继续，回到“单因素 ANOVA 检验”窗，点击选项。<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235732105.png" alt="image-20221121235732105" style="zoom:50%;" />
-
-点击继续，点击确定。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235813001.png" alt="image-20221121235813001" style="zoom:80%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235827805.png" alt="image-20221121235827805" style="zoom:80%;" />
-
-> 0.692，大于0.05，认为不拒绝方差假设。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235845772.png" alt="image-20221121235845772" style="zoom:80%;" />
-
-> F检验的结果，根据F值和P值，应该拒绝原假设。认为各组均值有显著差异。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221121235924043.png" alt="image-20221121235924043" style="zoom:80%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122000004163.png" alt="image-20221122000004163" style="zoom:80%;" />
-
-> 在显著性里找小于0.05的数字，例如“大专”和“大学本科及以上”，就说明“没读过书”和这两组的家庭月收入是有显著差异的。可以看到这两组的平均值差值在右上角有*号，这个符号就说明对应的这两组人与对比组有显著差异。
->
-> 小学没有。
->
-> “初中”与“大专”和“大学本科及以上”的两组人的家庭月收入的均值有显著差异。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122000029056.png" alt="image-20221122000029056" style="zoom:80%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122000042931.png" alt="image-20221122000042931" style="zoom:80%;" />
-
-> “高中”与“大专”和“大学本科及以上”的两组人的家庭月收入的均值有显著差异。
->
-> ”大专“与“初中”和“高中”的两组人的家庭月收入的均值有显著差异。
->
-> “大学本科及以上”与“初中”和“高中”的两组人的家庭月收入的均值有显著差异。
-
----
-
-#### 二因素的方差分析
-
-> 目的：分析两个因素（自变量）对观测变量（因变量）的影响。
-
-**分析 -> 一般线性模型 -> 单变量**
-
-案例：休闲调查.sav
-
-要求：以“文化程度、就业情况”为影响因素，对“月收入”进行多重比较的方差分析（包含交互效应）。
-
-步骤：
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122002626039.png" alt="image-20221122002626039" style="zoom: 67%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122002755862.png" alt="image-20221122002755862" style="zoom: 67%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122002810252.png" alt="image-20221122002810252" style="zoom: 67%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003113338.png" alt="image-20221122003113338" style="zoom:67%;" />
-
-> 全因子，包含3个自变量，文化程度，就业情况，以及它们两者的交互效应。
->
-> 定制的话可以自己选择因子，类型可选交互、主效应，所有二阶的意思是：除了文化程度和就业情况，还包括这两个因素的平方。
->
-> 我们此题选择全因子模型。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003438285.png" alt="image-20221122003438285" style="zoom:67%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003459150.png" alt="image-20221122003459150" style="zoom:67%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003822227.png" alt="image-20221122003822227" style="zoom:67%;" />
-
-点击继续，点击确定。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003854542.png" alt="image-20221122003854542" style="zoom:80%;" />
-
-> 首先按文化程度分类，每一个类人的个案数，可以看到初中的人最多，没读过书的这一类人最少。
->
-> 若按就业情况分类，可以看到在职在岗的人最多，内退的人最少
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122003959173.png" alt="image-20221122003959173" style="zoom:80%;" />
-
-> 没读过书且离退休的月收入均值是665元
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004141054.png" alt="image-20221122004141054" style="zoom:80%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004208545.png" alt="image-20221122004208545" style="zoom:80%;" />
-
-> 总体看下来，发现文化程度是大学本科及以上，就业情况是再就业，这类人群的月收入均值是最高的，2400元。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010018272.png" alt="image-20221122010018272" style="zoom:80%;" />
-
-> 重要的表之一，根据要求自变量是 文化程度、就业情况 和 文化程度与就业情况的交互效应。
->
-> 可以看到这三个自变量结合F值和显著性的值构成的表。看出 文化程度 的显著性是0.042，小于0.05，说明它对月收入的影响是显著的，而其他量因素的影响是不显著的。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010034804.png" alt="image-20221122010034804" style="zoom:80%;" />
-
-![image-20221122010056396](https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010056396.png)
-
-> 总的均值是1039.907。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004223344.png" alt="image-20221122004223344" style="zoom:80%;" />
-
-> 随文化程度的增到，月收入均值呈上升趋势。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004236993.png" alt="image-20221122004236993" style="zoom:80%;" />
-
-> 可以看到再就业的人月收入均值是最高的，最低的是病伤休。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004300586.png" alt="image-20221122004300586" style="zoom:80%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004334141.png" alt="image-20221122004334141" style="zoom:80%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122004408517.png" alt="image-20221122004408517" style="zoom:80%;" />
-
-> 和描述性统计的图类似。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010850627.png" alt="image-20221122010850627" style="zoom:80%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010900158.png" alt="image-20221122010900158" style="zoom:80%;" />
-
-> 文化程度是等级类型的自变量，可以看到，随着文化等级的升高，月收入的平均值是呈现升高的变化趋势。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221122010912378.png" alt="image-20221122010912378" style="zoom:80%;" />
-
-> 可以直观的看到再就业这一类人的月收入均值最高。
-
----
-
-#### 协方差分析
-
-> **目的：**在因素中包含连续型变量（协变量），对观测变量（因变量）进行更准确的分析。
-
-事实上，自变量有时候会包括想年龄这样的连续性变量，如果做方差分析的时候没有考虑连续性变量，那么这种方差分析是不够准确的，所以我们需要把这种连续性变量包括进来做方差分析，这就是协方差分析。
-
-**分析 -> 一般线性模型 -> 单变量**
-
-案例：休闲调查1.sav
-
-要求：以“文化程度、就业情况”为影响因素，以“年龄”为协变量，对“月收入”进行方差分析（增加参数估计）
-
-> 年龄使连续变量
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207125647142.png" alt="image-20221207125647142" style="zoom:50%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207125647142.png" alt="image-20221207125647142" style="zoom:50%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207125852366.png" alt="image-20221207125852366" style="zoom:50%;" />
-
-结果：
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207125941597.png" alt="image-20221207125941597" style="zoom: 67%;" />
-
-可以看到在文化程度的分类上，初中这一类人最多，就业情况在职在岗使最多的。
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130050103.png" alt="image-20221207130050103" style="zoom:67%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130111987.png" alt="image-20221207130111987" style="zoom: 67%;" />![image-20221207130128447](https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130128447.png)
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130111987.png" alt="image-20221207130111987" style="zoom: 67%;" /><img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130128447.png" alt="image-20221207130128447" style="zoom:67%;" />
-
-> 可以看到总体时随着……升高而升高
-
-![image-20221207130942401](https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207130942401.png)
-
-> 只有文化程度和月收入的影响是显著的
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207131804996.png" alt="image-20221207131804996" style="zoom:67%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207131837632.png" alt="image-20221207131837632" style="zoom:67%;" />
-
-> 看B值，先找一个类比值，文化程度是7，就业情况是11的时候B值都为0，我们吧这两种情况作为一个标准情况，也就是说这两种情况的人的月收入是最高的，也就是1649.259.作为一个标准，在此标准上，如果其他情况不变。把文化程度换成1，那个月收入就会减少883。
->
-> 年龄的B值为-4.146，就是说年龄增加一岁就会减少4.146.
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207132803362.png" alt="image-20221207132803362" style="zoom:67%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207132824991.png" alt="image-20221207132824991" style="zoom:67%;" />
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207132842738.png" alt="image-20221207132842738" style="zoom:67%;" />
-
----
-
-### 第10章 相关与回归分析
-
-名义类型，尺度类型
-
-如何进行尺度类型和尺度类型的变量比较
-
-**分析->相关**
-
-皮尔孙
-
-先做散点图，看两个变量之间是否有线性相关分析
-
-休闲调查1
-
-“住房面积”和“家月收入”作相关分析
-
-住房面积为x轴，家月收入为y轴
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207133333958.png" alt="image-20221207133333958" style="zoom:50%;" />
-
-选择简单散点
-
-<img src="https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207133444570.png" alt="image-20221207133444570" style="zoom:50%;" />
-
-![image-20221207133517238](https://tty79-1314711180.cos.ap-nanjing.myqcloud.com/images/image-20221207133517238.png)
-
-正相关
